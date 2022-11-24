@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "instagram-like-effect",
+    "slug": "instagram-like-effect",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
