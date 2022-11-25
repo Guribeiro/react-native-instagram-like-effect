@@ -39,11 +39,9 @@ export default function Post() {
     }
   });
 
-
   const likePost = () => {
     setIsLiked(prev => !prev);
   }
-
 
   const handleShowLikeIndicator = () => {
     iconLikeOpacity.value = withTiming(
