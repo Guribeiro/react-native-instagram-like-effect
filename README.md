@@ -3,9 +3,8 @@
 </h1>
 
 <h3 align="center">
-  <a target='_blank' to='https://medium.com/@gustavribeirod/330797726bc5'>
-    React Native: Instagram “double tap” like effect with reanimated.
-  </a>
+
+  [React Native: Instagram “double tap” like effect with reanimated](https://medium.com/@gustavribeirod/330797726bc5)
 </h3>
 
 </br>
@@ -19,9 +18,9 @@
 </div>
 
 <div align="center" id="top"> 
-  <a to='https://github.com/Guribeiro/react-native-instagram-like-effect/tree/instagram-like-style'>
-    go to app finished
-  </a>
+
+  [go to app finished](https://github.com/Guribeiro/react-native-instagram-like-effect/tree/instagram-like-style)
+
 </div>
 
 
