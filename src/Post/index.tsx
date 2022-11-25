@@ -23,13 +23,13 @@ export default function Post() {
 
   const [isLiked, setIsLiked] = useState(false);
 
-  const iconLikeOpacity = useSharedValue(0);
-  const iconLikeScale = useSharedValue(1);
+  const likeImageOpacity = useSharedValue(0);
+  const likeImageScale = useSharedValue(1);
 
   const iconLikeStyle = useAnimatedStyle(() => {
     return {
-      opacity: iconLikeOpacity.value,
-      transform: [{ scale: iconLikeScale.value }],
+      opacity: likeImageOpacity.value,
+      transform: [{ scale: likeImageScale.value }],
       width: '100%',
       height: '100%',
       justifyContent: 'center',
@@ -43,8 +43,8 @@ export default function Post() {
     setIsLiked(prev => !prev);
   }
 
-  const handleShowLikeIndicator = () => {
-    iconLikeOpacity.value = withTiming(
+  const handleLikePostIndicator = () => {
+    likeImageOpacity.value = withTiming(
       1,
       {
         duration: 200,
@@ -52,20 +52,20 @@ export default function Post() {
       }, () => {
         'worklet'
         runOnJS(likePost)();
-        iconLikeScale.value = withTiming(
+        likeImageScale.value = withTiming(
           1.25,
           {
             duration: 200,
             easing: Easing.ease
           }, () => {
-            iconLikeScale.value = withTiming(
+            likeImageScale.value = withTiming(
               1,
               {
                 duration: 200,
                 easing: Easing.ease
               },
               () => {
-                iconLikeOpacity.value = withTiming(
+                likeImageOpacity.value = withTiming(
                   0,
                   {
                     duration: 300,
@@ -82,7 +82,7 @@ export default function Post() {
 
   return (
     <Container>
-      <TapGestureHandler numberOfTaps={2} onActivated={handleShowLikeIndicator}>
+      <TapGestureHandler numberOfTaps={2} onActivated={handleLikePostIndicator}>
         <PostImageContainer>
           <PostImage source={{ uri: 'https://images.pexels.com/photos/8388229/pexels-photo-8388229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }} />
           <Animated.View style={iconLikeStyle}>
@@ -92,7 +92,7 @@ export default function Post() {
       </TapGestureHandler>
 
       <InteractionContainer>
-        <TouchableOpacity onPress={handleShowLikeIndicator}>
+        <TouchableOpacity onPress={handleLikePostIndicator}>
           <Icon isLiked={isLiked} name='heart' />
         </TouchableOpacity>
       </InteractionContainer>
